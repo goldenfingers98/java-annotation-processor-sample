@@ -13,7 +13,13 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13.2")
+    annotationProcessor(project(":processor"))
+    implementation(project(":processor"))
+}
 
-    annotationProcessor(project(":processors"))
-    implementation(project(":processors"))
+
+tasks.withType(JavaCompile::class) {
+    doFirst {
+        println("AnnotationProcessorPath for $name is ${options.annotationProcessorPath?.files})")
+    }
 }

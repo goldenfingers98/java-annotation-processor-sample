@@ -8,5 +8,5 @@
  */
 
 rootProject.name = "java-annotation-processor"
-include(":processors")
+include(":processor")
 include(":domain")
